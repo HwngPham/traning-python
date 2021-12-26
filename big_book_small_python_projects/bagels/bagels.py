@@ -56,13 +56,7 @@ class Game:
             else " ".join(digits_check_result)
 
     def __validate_input(self, num):
-        try:
-            guess = int(num)
-        except:
-            print('Please enter a valid number!')
-            return False
-
-        if guess < 100 or guess > 999:
+        if not num.isdecimal() or int(num) < 100 or int(num) > 999:
             print('Please enter a 3-digits number!')
             return False
 
